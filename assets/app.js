@@ -172,7 +172,7 @@
         </div>
       </div>
       <div class="field" style="margin-top:12px">
-        <input id="searchBox" type="search" placeholder="🔍 Search number, name, phone or rego…" />
+        <input id="searchBox" type="search" placeholder="Search number, name, phone or rego…" />
       </div>
       <div class="tabs">
         <div class="tab active" data-f="all">All</div>
@@ -427,8 +427,8 @@
       const customs = (state.customSnippets || []).filter(s => s.data && s.data.field === f.k);
       const customChips = customs.map(s =>
         `<span style="display:inline-flex;align-items:stretch;border:1px solid var(--brand);border-radius:8px;overflow:hidden">
-          <button type="button" data-csk="${s.id}" style="background:transparent;color:var(--brand);border:0;padding:7px 9px;font-size:13px;font-weight:700;cursor:pointer">★ ${escapeHtml(s.label || "snippet")}</button>
-          <button type="button" data-csd="${s.id}" title="Delete snippet" style="background:transparent;color:var(--brand);border:0;border-left:1px solid var(--brand);padding:7px 8px;cursor:pointer">×</button>
+          <button type="button" data-csk="${s.id}" style="background:transparent;color:var(--brand);border:0;padding:7px 9px;font-size:13px;font-weight:700;cursor:pointer">+ ${escapeHtml(s.label || "snippet")}</button>
+          <button type="button" data-csd="${s.id}" title="Delete snippet" style="background:transparent;color:var(--brand);border:0;border-left:1px solid var(--brand);padding:7px 8px;cursor:pointer">X</button>
         </span>`).join("");
       // Save snippet button (only for fields that support custom snippets)
       const saveable = ["notes","work_performed","diagnosis","reported_issue"];
@@ -462,7 +462,7 @@
     return `<div class="field" style="grid-column:1/-1">
       <div class="row" style="margin-bottom:8px;gap:8px;align-items:center">
         <select id="quickItem" style="max-width:280px">
-          <option value="">⚡ Quick add item…</option>${opts}
+          <option value="">Quick add item…</option>${opts}
         </select>
       </div>
       <table class="litems" id="litems">
@@ -481,7 +481,7 @@
       <td class="price"><input data-f="unit" value="${escapeHtml(it.unit)}"/></td>
       <td class="price"><input data-f="gst" value="${escapeHtml(it.gst)}"/></td>
       <td class="tot">$${window.SD_DOCGEN.money(line)}</td>
-      <td class="x" data-del="${i}">✕</td>
+      <td class="x" data-del="${i}">X</td>
     </tr>`;
   }
   function wireLineItems(data) {
@@ -572,7 +572,7 @@
     btn.disabled = false; btn.textContent = orig;
     if (res.error) return toast(res.error.message, "bad");
     state.current.id = res.data.id;   // now editing the (new) saved record
-    toast(asNew ? "Saved as new job ✓" : "Saved ✓", "ok");
+    toast(asNew ? "Saved as new job" : "Saved", "ok");
     if (!$("#delBtn")) {
       const del = el('<button class="btn btn-danger" id="delBtn">Delete</button>');
       $(".sticky-actions").appendChild(del); del.onclick = deleteJob;
@@ -627,7 +627,7 @@
       <div class="row between" style="margin-top:20px;align-items:center;flex-wrap:wrap;gap:10px">
         <h3 style="margin:0">Parts expenses</h3>
         <div class="row" style="gap:8px">
-          <button class="btn btn-ghost btn-sm" id="exportCSV">⬇ Export CSV (period)</button>
+          <button class="btn btn-ghost btn-sm" id="exportCSV">Export CSV (period)</button>
           <button class="btn btn-sm" id="addExp">+ Add expense / refund</button>
         </div>
       </div>
@@ -670,7 +670,7 @@
           <div class="t">${escapeHtml(e.supplier || "(supplier)")} ${e.receipt_no?('· #'+escapeHtml(e.receipt_no)):''}</div>
           <div class="s">${new Date(e.date||e.created_at).toLocaleDateString("en-AU")}${e.note?(' · '+escapeHtml(e.note)):''}</div>
         </div>
-        <div class="amt" style="color:${e.kind==='refund'?'var(--ok)':'var(--warn)'}">${e.kind==='refund'?'−':''}$${money(e.amount)}</div>
+        <div class="amt" style="color:${e.kind==='refund'?'var(--ok)':'var(--warn)'}">${e.kind==='refund'?'-':''}$${money(e.amount)}</div>
       </div>`).join("") + `</div>`;
     box.querySelectorAll("[data-eid]").forEach(it => it.onclick = () => {
       const e = state.expenses.find(x => x.id === it.dataset.eid); openExpense(e);
@@ -767,7 +767,7 @@
         total:amount, job_date:date, status:"paid", data, user_id:session.user.id };
       const res = await sb.from("jobs").insert(row).select().single();
       if (res.error) return toast(res.error.message,"bad");
-      overlay.remove(); await loadJobs(); renderMoneyBar(); toast("Cash sale saved ✓","ok");
+      overlay.remove(); await loadJobs(); renderMoneyBar(); toast("Cash sale saved","ok");
     };
   }
 
@@ -889,7 +889,7 @@
       const form = window.SD_FORMS[state.current.type];
       collect(form);
       renderForm(form, state.current.data);
-      toast("Snippet saved ✓", "ok");
+      toast("Snippet saved", "ok");
     };
   }
 
