@@ -172,7 +172,7 @@
         </div>
       </div>
       <div class="field" style="margin-top:12px">
-        <input id="searchBox" type="search" placeholder="🔍 Search number, name, phone or rego…" />
+        <input id="searchBox" type="search" placeholder="Search number, name, phone or rego…" />
       </div>
       <div class="tabs">
         <div class="tab active" data-f="all">All</div>
@@ -462,7 +462,7 @@
     return `<div class="field" style="grid-column:1/-1">
       <div class="row" style="margin-bottom:8px;gap:8px;align-items:center">
         <select id="quickItem" style="max-width:280px">
-          <option value="">⚡ Quick add item…</option>${opts}
+          <option value="">Quick add item…</option>${opts}
         </select>
       </div>
       <table class="litems" id="litems">
@@ -636,7 +636,7 @@
       <div class="row between" style="margin-top:20px;align-items:center;flex-wrap:wrap;gap:10px">
         <h3 style="margin:0">Parts expenses</h3>
         <div class="row" style="gap:8px">
-          <button class="btn btn-ghost btn-sm" id="exportCSV">⬇ Export CSV (period)</button>
+          <button class="btn btn-ghost btn-sm" id="exportCSV">Export CSV (period)</button>
           <button class="btn btn-sm" id="addExp">+ Add expense / refund</button>
         </div>
       </div>
