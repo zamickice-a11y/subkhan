@@ -1,0 +1,11 @@
+{
+  "name": "Southern Drive Motors — Office",
+  "short_name": "SD Office",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#2b6cb0",
+  "icons": [
+    { "src": "assets/logo.png", "sizes": "700x412", "type": "image/png" }
+  ]
+}
