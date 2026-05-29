@@ -13,6 +13,7 @@ window.SD_CONFIG = {
     email:   "southerndrivemotors@gmail.com",
     address: "31 Bacon Street, Hindmarsh SA 5007",
     arc_no:  "AU065681",
+    gst_registered: true,
     bank: {
       name: "Southern Drive Motors",
       bsb:  "065139",
