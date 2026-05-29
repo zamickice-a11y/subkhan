@@ -62,7 +62,7 @@
     lineItems: [
       { group: "Service", items: [
         { label: "Log book service", desc: "Log book service ___km", unit: 170 },
-        { label: "Standard service", desc: "Standard service ___km", unit: 170 },
+        { label: "Standard service", desc: "Motor service oil and oil filter plus safty", unit: 109.09 },
         { label: "Diagnostic & labor fee", desc: "Diagnostic & labor fee", unit: 170 },
         { label: "Labour (per hour)", desc: "Labour", unit: 110 },
       ]},
@@ -83,8 +83,8 @@
         { label: "Spark plugs", desc: "Spark plugs", unit: 42 },
       ]},
       { group: "Brakes", items: [
-        { label: "Front brake pads (pair)", desc: "Front brake pads (ceramic) pair", unit: 150 },
-        { label: "Rear brake pads (pair)", desc: "Rear brake pads (ceramic) pair", unit: 100 },
+        { label: "Front brake pads (pair)", desc: "Front brake pads (ceramic) pair", unit: 140 },
+        { label: "Rear brake pads (pair)", desc: "Rear brake pads (ceramic) pair", unit: 140 },
         { label: "Front brake rotors", desc: "Front brake rotors", unit: 220 },
         { label: "Rear brake rotors", desc: "Rear brake rotors", unit: 145 },
       ]},
